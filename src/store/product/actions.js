@@ -14,3 +14,10 @@ export async function getProducts({ commit }) {
     console.log(e);
   }
 }
+
+// Action to add to cart 
+export function addCart({ commit, getters }, payload) {
+  let cart = getters.cart;
+  cart.push(payload);
+  commit('setCart', cart);
+}
